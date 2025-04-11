@@ -129,11 +129,12 @@ nav {
     transition: color 0.3s;
     display: flex;
     align-items: center;
+    margin-left: -10rem;
 }
 
 .logo-img {
     height: 100px;
-    margin-right: 0.4rem;
+    margin-right: -0.5rem;
 }
 
 .logo:hover {
@@ -527,9 +528,12 @@ section {
 }
 
 .team-photo {
-    height: 300px;
+    height: 400px;
+    width: 400px; /* same as height for a circle */
+    border-radius: 50%; /* makes it a circle */
     background-size: cover;
     background-position: center;
+    margin: 40px auto 0 auto; 
 }
 
 .team-info {
