@@ -83,12 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     firstError.focus();
                 }
-            } else {
-                // Show success message (you might want to replace this with AJAX submission)
-                event.preventDefault();
-                alert('Thank you for your submission! We will contact you within 24 hours.');
-                requestForm.reset();
             }
+            // Allow form to submit to FormSubmit if validation passes
         });
         
         // File upload preview

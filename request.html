@@ -54,42 +54,40 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="https://formsubmit.co/989a572fa501e732f4a88653fcd01cab" method="POST" />
-                <form id="requestForm">
+                <form action="https://formsubmit.co/989a572fa501e732f4a88653fcd01cab" method="POST" id="requestForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control">
+                            <input type="tel" id="phone" name="phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="business">Business Name</label>
-                            <input type="text" id="business" class="form-control" required>
+                            <input type="text" id="business" name="business" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="website-type">Website Type</label>
-                        <select id="website-type" class="form-select" required>
+                        <select id="website-type" name="website-type" class="form-select" required>
                             <option value="">-- Select --</option>
                             <option value="business">Business Website</option>
                             <option value="portfolio">Portfolio Website</option>
-                            <option value="ecommerce">E-commerce Website</option>
                             <option value="blog">Blog Website</option>
                             <option value="other">Other (Please specify)</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Tell us about your business and website needs</label>
-                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
                         <p class="form-note">Include any specific features, design preferences, or inspiration sites.</p>
                     </div>
                     <div class="form-group">
@@ -98,13 +96,13 @@
                             <label for="file-upload" class="file-upload-btn">
                                 <i class="fas fa-cloud-upload-alt"></i> Choose Files
                             </label>
-                            <input type="file" id="file-upload" style="display: none;" multiple>
+                            <input type="file" id="file-upload" name="file-upload" style="display: none;" multiple>
                             <span class="file-upload-text" id="file-upload-text">No files selected</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="timeline">Timeline</label>
-                        <select id="timeline" class="form-select">
+                        <select id="timeline" name="timeline" class="form-select">
                             <option value="">-- Select --</option>
                             <option value="urgent">As soon as possible</option>
                             <option value="1month">Within 1 month</option>
