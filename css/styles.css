@@ -124,7 +124,7 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--black);
     text-decoration: none;
     transition: color 0.3s;
     display: flex;
@@ -133,8 +133,10 @@ nav {
 }
 
 .logo-img {
-    height: 100px;
-    margin-right: -0.5rem;
+    height: 100px; 
+    transform: scale(1.3); 
+    transform-origin: left center; 
+    margin-right: 0.6rem;
 }
 
 .logo:hover {
@@ -267,7 +269,7 @@ nav {
     background-image: url('../images/home-background.png');
     background-size: cover;
     background-position: center;
-    filter: blur(6px);
+    filter: blur(7x);
     z-index: -1;
 }
 

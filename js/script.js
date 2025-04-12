@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // Phone validation (optional)
+            // Phone validation
             const phoneField = document.getElementById('phone');
             if (phoneField && phoneField.value.trim()) {
                 const phonePattern = /^[0-9\-\+\(\)\s]{10,15}$/;
