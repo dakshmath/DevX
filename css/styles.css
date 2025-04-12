@@ -149,9 +149,9 @@ nav {
 }
 
 .logo-img {
-    height: 100px; 
-    transform: scale(1.2); 
-    transform-origin: left center; 
+    height: 100px;
+    transform: scale(1.2);
+    transform-origin: left center;
     margin-right: 0.6rem;
 }
 
