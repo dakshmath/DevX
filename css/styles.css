@@ -691,8 +691,8 @@ section {
 }
 
 .service-image {
-    height: 200px;
-    background-size: cover;
+    height: 250px;
+    background-size: contain;
     background-position: center;
 }
 
