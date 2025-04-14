@@ -604,8 +604,10 @@ section {
 }
 
 .team-member {
-    perspective: 1000px; /* Required for 3D effect */
-    height: 500px; /* Set a fixed height for the card */
+    perspective: 800px;
+    /* Required for 3D effect */
+    height: 500px;
+    /* Set a fixed height for the card */
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -625,11 +627,13 @@ section {
     transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari support */
+    -webkit-backface-visibility: hidden;
+    /* Safari support */
     backface-visibility: hidden;
     border-radius: 8px;
 }
@@ -647,6 +651,10 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.flip-card-back h3 {
+    text-align: center;
 }
 
 .team-photo {
@@ -674,10 +682,12 @@ section {
 }
 
 .bio-text {
+    margin-top: 3rem;
     margin-bottom: 1.5rem;
     line-height: 1.6;
     overflow-y: auto;
     flex-grow: 1;
+    text-align: center;
 }
 
 .social-links {
@@ -728,6 +738,7 @@ section {
     from {
         transform: translateY(0);
     }
+
     to {
         transform: translateY(-5px);
     }
