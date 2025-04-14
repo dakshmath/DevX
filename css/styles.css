@@ -604,7 +604,7 @@ section {
 }
 
 .team-member {
-    perspective: 800px;
+    perspective: 700px;
     /* Required for 3D effect */
     height: 500px;
     /* Set a fixed height for the card */
@@ -764,7 +764,7 @@ section {
 }
 
 .service-image {
-    height: 250px;
+    height: 350px;
     background-size: contain;
     background-position: center;
 }
