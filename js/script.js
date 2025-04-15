@@ -1,12 +1,12 @@
 // Mobile Navigation Toggle
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const mobileNavToggle = document.getElementById('mobileNavToggle');
     const navLinks = document.getElementById('navLinks');
-    
+
     if (mobileNavToggle && navLinks) {
-        mobileNavToggle.addEventListener('click', function() {
+        mobileNavToggle.addEventListener('click', function () {
             navLinks.classList.toggle('active');
-            
+
             // Change the icon based on menu state
             const icon = mobileNavToggle.querySelector('i');
             if (icon) {
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Close mobile menu when clicking a link
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             if (window.innerWidth <= 768) {
                 navLinks.classList.remove('active');
                 const icon = mobileNavToggle.querySelector('i');
@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Form validation for the request form
     const requestForm = document.getElementById('requestForm');
     if (requestForm) {
-        requestForm.addEventListener('submit', function(event) {
+        requestForm.addEventListener('submit', function (event) {
             let valid = true;
-            
+
             // Basic validation for required fields
             const requiredFields = requestForm.querySelectorAll('[required]');
             requiredFields.forEach(field => {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     field.classList.remove('error');
                 }
             });
-            
+
             // Email validation
             const emailField = document.getElementById('email');
             if (emailField && emailField.value.trim()) {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     emailField.classList.add('error');
                 }
             }
-            
+
             // Phone validation
             const phoneField = document.getElementById('phone');
             if (phoneField && phoneField.value.trim()) {
@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     phoneField.classList.add('error');
                 }
             }
-            
+
             // If the form is not valid, prevent submission
             if (!valid) {
                 event.preventDefault();
-                
+
                 // Scroll to the first error
                 const firstError = requestForm.querySelector('.error');
                 if (firstError) {
@@ -86,13 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             // Allow form to submit to FormSubmit if validation passes
         });
-        
+
         // File upload preview
         const fileUpload = document.getElementById('file-upload');
         const fileText = document.getElementById('file-upload-text');
-        
+
         if (fileUpload && fileText) {
-            fileUpload.addEventListener('change', function() {
+            fileUpload.addEventListener('change', function () {
                 if (fileUpload.files.length > 0) {
                     let fileNames = '';
                     for (let i = 0; i < fileUpload.files.length; i++) {
@@ -107,17 +107,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        
+
         // Real-time validation feedback
         const inputFields = requestForm.querySelectorAll('input, textarea, select');
         inputFields.forEach(field => {
-            field.addEventListener('blur', function() {
+            field.addEventListener('blur', function () {
                 if (field.hasAttribute('required') && !field.value.trim()) {
                     field.classList.add('error');
                 } else {
                     field.classList.remove('error');
                 }
-                
+
                 // Real-time email validation
                 if (field.id === 'email' && field.value.trim()) {
                     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -127,6 +127,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         field.classList.remove('error');
                     }
                 }
+            });
+        });
+
+        document.querySelectorAll('.team-member').forEach(member => {
+            member.addEventListener('click', function () {
+                console.log('Card clicked!');
+                this.classList.toggle('flipped');
             });
         });
     }
