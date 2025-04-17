@@ -798,7 +798,7 @@ section {
 
 .hover-prompt i {
     margin-left: 5px;
-    animation: bounce 1s infinite alternate;
+    animation: bounce 0.7s infinite alternate;
 }
 
 @keyframes bounce {
