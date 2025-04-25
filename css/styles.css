@@ -381,7 +381,7 @@ nav {
 
 /* ===== PAGE HEADER ===== */
 .page-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/page-header-bg.jpg');
+    background-image: url('../images/header-background.png');
     background-size: cover;
     background-position: center;
     height: 40vh;
@@ -399,13 +399,13 @@ nav {
 }
 
 .page-header h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .page-header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 /* ===== SECTION STYLES ===== */
