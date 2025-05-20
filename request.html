@@ -60,7 +60,13 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="https://formsubmit.co/8b3a8776c09aaeb8f759ae4ff9d18079" method="POST" id="requestForm">
+                <form action="https://formsubmit.co/8b3a8776c09aaeb8f759ae4ff9d18079" method="POST" id="requestForm"
+                    enctype="multipart/form-data">
+                    <!-- FormSubmit.co Configuration -->
+                    <input type="hidden" name="_subject" value="New Website Request from DevX Form">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -103,11 +109,7 @@
                             <label for="file-upload" class="file-upload-btn">
                                 <i class="fas fa-cloud-upload-alt"></i> Choose Files
                             </label>
-                            <input type="file" id="file-upload" name="file-upload" style="display: none;" multiple>
-
-                            <!-- Hidden field to hold file.io link -->
-                            <input type="hidden" name="file_link" id="file_link">
-
+                            <input type="file" id="file-upload" name="attachment" style="display: none;" multiple>
                             <span class="file-upload-text" id="file-upload-text">No files selected</span>
                         </div>
                     </div>
@@ -158,6 +160,21 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Update file upload display
+        document.getElementById('file-upload').addEventListener('change', function () {
+            const fileUploadText = document.getElementById('file-upload-text');
+            if (this.files.length > 0) {
+                if (this.files.length === 1) {
+                    fileUploadText.textContent = this.files[0].name;
+                } else {
+                    fileUploadText.textContent = this.files.length + ' files selected';
+                }
+            } else {
+                fileUploadText.textContent = 'No files selected';
+            }
+        });
+    </script>
 </body>
 
 </html>
