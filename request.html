@@ -109,9 +109,17 @@
                             <label for="file-upload" class="file-upload-btn">
                                 <i class="fas fa-cloud-upload-alt"></i> Choose Files
                             </label>
-                            <input type="file" id="file-upload" name="attachment" style="display: none;" multiple>
+                            <input type="file" id="file-upload" name="attachment" style="display: none;">
                             <span class="file-upload-text" id="file-upload-text">No files selected</span>
                         </div>
+                        <!-- Additional file uploads -->
+                        <div class="additional-files" id="additional-files">
+                            <!-- Additional file inputs will be added here -->
+                        </div>
+                        <button type="button" id="add-file" class="btn btn-secondary"
+                            style="margin-top: 10px; background-color: #6c757d; padding: 8px 15px; border: none; border-radius: 4px; color: white; cursor: pointer;">
+                            <i class="fas fa-plus"></i> Add Another File
+                        </button>
                     </div>
                     <div class="form-group">
                         <label for="timeline">Timeline</label>
@@ -165,14 +173,51 @@
         document.getElementById('file-upload').addEventListener('change', function () {
             const fileUploadText = document.getElementById('file-upload-text');
             if (this.files.length > 0) {
-                if (this.files.length === 1) {
-                    fileUploadText.textContent = this.files[0].name;
-                } else {
-                    fileUploadText.textContent = this.files.length + ' files selected';
-                }
+                fileUploadText.textContent = this.files[0].name;
             } else {
                 fileUploadText.textContent = 'No files selected';
             }
+        });
+
+        // Add more file uploads functionality
+        let fileCounter = 1;
+        document.getElementById('add-file').addEventListener('click', function () {
+            const additionalFiles = document.getElementById('additional-files');
+            const fileId = 'file-upload-' + fileCounter;
+            const newFileUpload = document.createElement('div');
+            newFileUpload.className = 'file-upload';
+            newFileUpload.style.marginTop = '10px';
+
+            newFileUpload.innerHTML = `
+                <label for="${fileId}" class="file-upload-btn">
+                    <i class="fas fa-cloud-upload-alt"></i> Choose File
+                </label>
+                <input type="file" id="${fileId}" name="attachment${fileCounter}" style="display: none;">
+                <span class="file-upload-text" id="${fileId}-text">No file selected</span>
+                <button type="button" class="remove-file" style="margin-left: 10px; background-color: #dc3545; padding: 5px 10px; border: none; border-radius: 4px; color: white; cursor: pointer;">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+
+            additionalFiles.appendChild(newFileUpload);
+
+            // Add event listener to the new file input
+            document.getElementById(fileId).addEventListener('change', function () {
+                const fileText = document.getElementById(`${fileId}-text`);
+                if (this.files.length > 0) {
+                    fileText.textContent = this.files[0].name;
+                } else {
+                    fileText.textContent = 'No file selected';
+                }
+            });
+
+            // Add event listener to remove button
+            newFileUpload.querySelector('.remove-file').addEventListener('click', function () {
+                additionalFiles.removeChild(newFileUpload);
+                fileCounter--;
+            });
+
+            fileCounter++;
         });
     </script>
 </body>
