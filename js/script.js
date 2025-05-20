@@ -130,11 +130,44 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
+
+
         document.querySelectorAll('.team-member').forEach(member => {
             member.addEventListener('click', function () {
                 console.log('Card clicked!');
                 this.classList.toggle('flipped');
             });
+        });
+
+        document.getElementById('requestForm').addEventListener('submit', function (e) {
+            const fileInput = document.getElementById('file-upload');
+            const hiddenInput = document.getElementById('file_link');
+
+            // If files are selected
+            if (fileInput.files.length > 0) {
+                e.preventDefault(); // stop form from submitting immediately
+
+                const formData = new FormData();
+                // Only take first file — or loop through for multiple
+                formData.append('file', fileInput.files[0]);
+
+                fetch('https://file.io/?expires=1d', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            hiddenInput.value = result.link;
+                            document.getElementById('requestForm').submit(); // now submit
+                        } else {
+                            alert('File upload failed. Please try again.');
+                        }
+                    })
+                    .catch(() => {
+                        alert('Error uploading file. Please check your connection.');
+                    });
+            }
         });
     }
 });
