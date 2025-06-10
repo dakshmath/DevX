@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO & Google Search Console | DevX Web Design</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles for SEO page */
+        .seo-guide {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .seo-guide h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .seo-guide ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .seo-guide li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .seo-guide li strong {
+            color: var(--dark);
+        }
+
+        .highlight-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .screenshot-placeholder {
+            background-color: var(--light);
+            border: 2px dashed var(--gray);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--gray);
+        }
+
+        .screenshot-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .code-snippet {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/favicon.png" alt="DevX Logo" class="logo-img">
+                DevX
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="seo.html" class="active">SEO</a></li>
+                <li><a href="request.html" class="nav-cta">Request a Website</a></li>
+            </ul>
+            <div class="hamburger" id="mobileNavToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <h1>SEO & Search Console Guide</h1>
+            <p>Get your website indexed and found on Google</p>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="seo-intro">
+        <div class="section-header">
+            <h2>Why SEO Matters for Your Business</h2>
+            <p>Search Engine Optimization helps customers find your business when they search online</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-search"></i>
+                <h4>Increased Visibility</h4>
+                <p>Appear higher in search results when customers look for your services</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-users"></i>
+                <h4>More Customers</h4>
+                <p>Drive more qualified traffic to your website and increase leads</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-chart-up"></i>
+                <h4>Business Growth</h4>
+                <p>Establish credibility and grow your business through organic search</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-dollar-sign"></i>
+                <h4>Cost-Effective</h4>
+                <p>Organic search traffic is free, unlike paid advertising</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Search Console Guide -->
+    <section class="search-console-guide">
+        <div class="section-header">
+            <h2>How to Index Your Website on Google</h2>
+            <p>Step-by-step guide to get your website showing up in Google search results</p>
+        </div>
+
+        <div class="seo-guide">
+            <h3>Step 1: Set Up Google Search Console</h3>
+            <ol>
+                <li><strong>Go to Google Search Console:</strong> Visit <a
+                        href="https://search.google.com/search-console" target="_blank"
+                        style="color: var(--primary);">search.google.com/search-console</a></li>
+                <li><strong>Sign in:</strong> Use your Google account to sign in</li>
+                <li><strong>Add your website:</strong> Click "Add Property" and enter your website URL</li>
+                <li><strong>Choose verification method:</strong> Select "URL prefix" and enter your complete website URL
+                    (e.g., https://yourbusiness.com)</li>
+            </ol>
+
+            <div class="screenshot-placeholder">
+                <i class="fas fa-image"></i>
+                <p>Google Search Console Dashboard</p>
+            </div>
+        </div>
+
+        <div class="seo-guide">
+            <h3>Step 2: Verify Your Website Ownership</h3>
+            <p>Google needs to confirm you own the website. Here are the most common methods:</p>
+
+            <div class="highlight-box">
+                <h4>HTML File Upload (Recommended)</h4>
+                <ol>
+                    <li>Download the HTML verification file from Google</li>
+                    <li>Upload it to your website's root directory</li>
+                    <li>Click "Verify" in Google Search Console</li>
+                </ol>
+            </div>
+
+            <div class="highlight-box">
+                <h4>HTML Tag Method</h4>
+                <ol>
+                    <li>Copy the meta tag provided by Google</li>
+                    <li>Add it to your website's HTML head section:</li>
+                </ol>
+                <div class="code-snippet">
+                    &lt;meta name="google-site-verification" content="your-verification-code" /&gt;
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>Need Help with Verification?</h4>
+                <p>If you're not comfortable with these technical steps, DevX can help you set up Google Search Console
+                    as part of our SEO services. Contact us for assistance!</p>
+            </div>
+        </div>
+
+        <div class="seo-guide">
+            <h3>Step 3: Submit Your Sitemap</h3>
+            <ol>
+                <li><strong>Create a sitemap:</strong> Your sitemap is usually located at yourdomain.com/sitemap.xml
+                </li>
+                <li><strong>In Search Console:</strong> Go to "Sitemaps" in the left menu</li>
+                <li><strong>Add sitemap URL:</strong> Enter "sitemap.xml" in the field</li>
+                <li><strong>Submit:</strong> Click "Submit" to let Google know about all your pages</li>
+            </ol>
+
+            <div class="highlight-box">
+                <h4>What is a Sitemap?</h4>
+                <p>A sitemap is like a roadmap of your website that helps Google find and understand all your pages. It
+                    lists all the important pages on your site in a format that search engines can easily read.</p>
+            </div>
+        </div>
+
+        <div class="seo-guide">
+            <h3>Step 4: Request Indexing for Individual Pages</h3>
+            <ol>
+                <li><strong>Use the URL Inspection tool:</strong> In Search Console, click "URL Inspection"</li>
+                <li><strong>Enter your page URL:</strong> Type the full URL of a page you want indexed</li>
+                <li><strong>Check status:</strong> See if the page is already indexed</li>
+                <li><strong>Request indexing:</strong> If not indexed, click "Request Indexing"</li>
+            </ol>
+
+            <div class="warning-box">
+                <h4>Be Patient</h4>
+                <p>It can take anywhere from a few hours to several weeks for Google to index your pages. Don't worry if
+                    you don't see immediate results!</p>
+            </div>
+        </div>
+
+        <div class="seo-guide">
+            <h3>Step 5: Monitor Your Website's Performance</h3>
+            <p>Once your site is indexed, use these Search Console features to track your progress:</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Performance Report:</strong> See how often your site appears in search results</li>
+                <li><strong>Coverage Report:</strong> Check which pages are indexed and identify any issues</li>
+                <li><strong>Enhancement Reports:</strong> Get suggestions for improving your site's search appearance
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SEO Best Practices -->
+    <section class="seo-best-practices">
+        <div class="section-header">
+            <h2>Essential SEO Tips for Local Businesses</h2>
+            <p>Simple strategies to improve your website's search rankings</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Local Keywords</h3>
+                <p>Include your city and location in your content. Use phrases like "best pizza in [your city]" or
+                    "[your service] near me".</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Google My Business</h3>
+                <p>Claim and optimize your Google My Business listing. This helps you appear in local search results and
+                    Google Maps.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile-Friendly</h3>
+                <p>Ensure your website works perfectly on mobile devices. Google prioritizes mobile-friendly websites in
+                    search results.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>Page Speed</h3>
+                <p>Fast-loading websites rank better. Optimize images and minimize code to improve your site's loading
+                    speed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <h3>Quality Content</h3>
+                <p>Create helpful, relevant content that answers your customers' questions and provides value.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Customer Reviews</h3>
+                <p>Encourage satisfied customers to leave reviews. Positive reviews improve your local search rankings.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="seo-faq">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Common questions about SEO and Google Search Console</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>How long does it take to see results from SEO?</h4>
+            <p>SEO is a long-term strategy. You might see some improvements in 1-3 months, but significant results
+                typically take 3-6 months of consistent effort.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Do I need to pay Google to appear in search results?</h4>
+            <p>No! Organic search results are free. You can pay for ads (Google Ads), but proper SEO can get you ranked
+                organically without ongoing costs.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>What's the difference between SEO and Google Ads?</h4>
+            <p>SEO helps you rank organically (free) in search results, while Google Ads are paid advertisements that
+                appear at the top of search results.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Can I do SEO myself, or do I need professional help?</h4>
+            <p>Basic SEO can be done yourself, but professional SEO services can save you time and often achieve better
+                results through expertise and experience.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>How often should I update my website for SEO?</h4>
+            <p>Regular updates help with SEO. Try to add new content monthly, update your business information as
+                needed, and keep your website fresh and relevant.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Need Help with SEO?</h2>
+            <p>Let DevX handle your website's SEO so you can focus on running your business.</p>
+            <a href="request.html" class="btn btn-primary">Get SEO Help</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>DevX</h3>
+                <p>Modern websites for local businesses built by high school entrepreneurs in your community.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="seo.html">SEO</a></li>
+                    <li><a href="request.html">Request a Website</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i>devx.websites@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 DevX. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
